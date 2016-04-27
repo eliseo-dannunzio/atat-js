@@ -1,0 +1,35 @@
+<!-- Introduce AT-AT -->
+<script type="text/javascript" src="atat.js"></script>
+<!-- Style sheet -->
+<link rel="stylesheet" type="text/css" href="atat.css" />
+<!-- Our content shell -->
+<h1>List of Santa's Reindeer</h1>
+<ul id="results"></ul>
+
+<!-- Introduce our AT-AT content template -->
+<script type="text/html" id="reindeer_tmpl">
+  <@ for ( var i = 0; i < reindeer.length; i++ ) { @>
+    <li id="<@=reindeer[i].id@>" class="<@=(i % 2 == 1 ? " even" : " odd")@>">
+      <@=reindeer[i].id@><@=reindeer[i].ordinal@> reindeer: <@=reindeer[i].name@>
+    </li>
+  <@ } @>
+</script>
+
+<!-- The data for the reindeer and activation script; this could be referenced externally if desired -->
+<script>
+  var dataObject = {
+    reindeer:[
+    {id:1, name:"Dasher", ordinal:"st"},
+    {id:2, name:"Dancer", ordinal:"nd"},
+    {id:3, name:"Prancer", ordinal:"rd"},
+    {id:4, name:"Vixen", ordinal:"th"},
+    {id:5, name:"Comet", ordinal:"th"},
+    {id:6, name:"Cupid", ordinal:"th"},
+    {id:7, name:"Donner", ordinal:"th"},
+    {id:8, name:"Blitzen", ordinal:"th"}
+    ]
+  };
+
+  var results = document.getElementById("results");
+  results.innerHTML = tmpl("reindeer_tmpl", dataObject);
+</script>

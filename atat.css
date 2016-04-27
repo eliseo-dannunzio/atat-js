@@ -1,0 +1,12 @@
+li{
+    border-bottom: 1px dotted grey;
+    list-style-type: none;
+}
+li.odd{
+    background: green;  
+    color: white;  
+}
+li.even{
+    background: yellow;
+    color: black;
+}
