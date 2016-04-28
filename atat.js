@@ -17,7 +17,7 @@
         "with(obj){p.push('" +
 
         // Template now gets converted to vanilla JavaScript
-        str[r](/[\r\t\n]/g, " ")[s]("<@").join("\t")[r](/((^|@>)[^\t]*)'/g, "$1\r")[r](/\t=(.*?)@>/g, "',$1,'")[s]("\t")[j]("');")[s]("@>")[j]("p.push('")[s]("\r")[j]("\\'")+ "');}return p.join('');");
+        str[r](/[\r\t\n]/g, " ")[s]("<@")[j]("\t")[r](/((^|@>)[^\t]*)'/g, "$1\r")[r](/\t=(.*?)@>/g, "',$1,'")[s]("\t")[j]("');")[s]("@>")[j]("p.push('")[s]("\r")[j]("\\'")+ "');}return p.join('');");
 
     return data ? fxn( data ) : fxn;
   };
